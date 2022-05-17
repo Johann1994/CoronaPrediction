@@ -1,0 +1,155 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>eb9002d3-6eb6-4a00-91d2-b44fea69bd52</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>MakePrediction_7d.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>CoronaPrediction</Name>
+    <RootNamespace>CoronaPrediction</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="calcRMSE.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionGlobalDataLSTM.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionGlobalDataProphet.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionGRU_WeatherLockDown.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM.py" />
+    <Compile Include="CoronaPredictionLSTMAustriaWithWeather.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTMWithLockdown.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_allData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_Impfungen.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_LastDaysWithLockdown.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_LastDaysWithWeather.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_LastDayWeekDays.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_LockDownVacc.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_LockDownWeekDay.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_LockWeekDay.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_LockWeekVac.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_TestLastDays.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_VacWeather.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_WeatherAndLockDown.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_WeatherAndLockDown7d.py" />
+    <Compile Include="CoronaPredictionLSTM_WeatherAndWeekDay.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_WeatherLockVac.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionLSTM_WeekDayVacc.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoronaPredictionProphet.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataDiscover\PrintInfoFromModel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataReading\CSVDataReader.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataReading\DataCleaning.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="diagramFromPrediction.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DownloadWeatherCSV.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MakePrediction_7d.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modell\ModelPrediction.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modell\PrepareForLSTM.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modell\ProphetModell.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modell\TrainModellGRU.py" />
+    <Compile Include="Modell\TrainModell.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modell\WriteModelInformation.py" />
+    <Compile Include="MakePrediction.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\FolderCreator.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataReading\" />
+    <Folder Include="DataDiscover\" />
+    <Folder Include="Modell\" />
+    <Folder Include="Tools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda36-64" />
+    <InterpreterReference Include="Global|PythonCore|3.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

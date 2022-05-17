@@ -1,0 +1,20 @@
+Model:
+KerasTensor(type_spec=TensorSpec(shape=(None, 1), dtype=tf.float32, name=None), name='dense_1/Sigmoid:0', description="created by layer 'dense_1'")
+Model Summary: 
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 10, 256)           1792      
+_________________________________________________________________
+lstm (LSTM)                  (None, 128)               197120    
+_________________________________________________________________
+dropout (Dropout)            (None, 128)               0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 129       
+=================================================================
+Total params: 199,041
+Trainable params: 199,041
+Non-trainable params: 0
+_________________________________________________________________
+mse: 1257.62890625

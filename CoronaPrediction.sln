@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1321
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CoronaPrediction", "CoronaPrediction\CoronaPrediction.pyproj", "{EB9002D3-6EB6-4A00-91D2-B44FEA69BD52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB9002D3-6EB6-4A00-91D2-B44FEA69BD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB9002D3-6EB6-4A00-91D2-B44FEA69BD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD05A948-DA83-4693-A872-F3EAD5A092AD}
+	EndGlobalSection
+EndGlobal

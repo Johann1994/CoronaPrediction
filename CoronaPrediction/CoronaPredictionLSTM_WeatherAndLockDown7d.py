@@ -1,0 +1,45 @@
+import pandas as pd
+
+import sys
+sys.path.insert(0, "./DataReading")
+from CSVDataReader import readInCSVFile
+from DataCleaning import cleanDataFramForAustria, cleanDataFramWithoutAustria, addWeatherInformation, addWeatherInformation_Val, addLockdownInformationForAustria
+sys.path.insert(1, "./DataDiscover")
+from PrintInfoFromModel import printInformationToFile
+sys.path.insert(1, "./Modell")
+from PrepareForLSTM import prepareDatFramesForLSTMUniqueLandsYMoreElements
+from TrainModell import trainModel
+from sklearn.model_selection import train_test_split
+sys.path.insert(1,"./Tools")
+from FolderCreator import createDirectory
+
+df = readInCSVFile("../Data/CovidFaelle_Timeline.csv")
+df = cleanDataFramWithoutAustria(df)
+df = addWeatherInformation(df)
+df = addLockdownInformationForAustria(df)
+dfValTest = readInCSVFile("../Data/CovidFaelle_TestVal.csv")
+dfValTest = cleanDataFramWithoutAustria(dfValTest)
+dfValTest = addWeatherInformation_Val(dfValTest)
+dfValTest = addLockdownInformationForAustria(dfValTest)
+
+#printInformationToFile(df, "../DataDiscovering/AustriaJustLands/")
+
+selection = ["Time","BundeslandID", "AnzahlPlus10d", "AnzahlFaelle", "SiebenTageInzidenzFaelle","Temperature","Relative Humidity","Precipitation", "Wind Speed", "LockDown" ]
+df = df[selection]
+dfValTest = dfValTest[selection]
+folder = "../Output/OmikronWeatherLockdown7d/3/"
+createDirectory(folder)
+
+dfVal = dfValTest[dfValTest.BundeslandID == 7]
+dfTest = dfValTest[dfValTest.BundeslandID == 3]
+
+timeStep=10
+
+x_train,y_train = prepareDatFramesForLSTMUniqueLandsYMoreElements(df, folder, timeSteps=timeStep, loadFromFile=False)
+
+x_test, y_test = prepareDatFramesForLSTMUniqueLandsYMoreElements(dfTest, folder, timeSteps=timeStep, loadFromFile=True)
+x_val, y_val = prepareDatFramesForLSTMUniqueLandsYMoreElements(dfVal, folder, timeSteps=timeStep, loadFromFile=True)
+
+trainModel(x_train, y_train, x_val, y_val, x_test, y_test, folder)
+
+

@@ -1,0 +1,17 @@
+shape: 
+(508, 9)
+used columns: 
+Index(['Time', 'BundeslandID', 'AnzEinwohner', 'AnzahlFaelle',
+       'AnzahlFaelleSum', 'AnzahlFaelle7Tage', 'SiebenTageInzidenzFaelle',
+       'AnzahlGeheiltTaeglich', 'AnzahlGeheiltSum'],
+      dtype='object')
+Beschreibung: 
+ BundeslandID  AnzEinwohner  AnzahlFaelle  AnzahlFaelleSum  AnzahlFaelle7Tage  SiebenTageInzidenzFaelle  AnzahlGeheiltTaeglich  AnzahlGeheiltSum
+        508.0         508.0    508.000000     5.080000e+02         508.000000                508.000000             508.000000        508.000000
+         10.0     8932664.0   2066.883858     4.392302e+05       13893.891732                155.540292            1699.031496     406002.242126
+          0.0           0.0   2526.609507     2.786417e+05       16032.111133                179.477369            1627.507725     266139.714451
+         10.0     8932664.0     52.000000     1.795800e+04         507.000000                  5.675798              23.000000      16389.000000
+         10.0     8932664.0    414.000000     1.481252e+05        2959.500000                 33.131210             375.500000      83322.000000
+         10.0     8932664.0   1431.500000     4.877600e+05       10369.500000                116.085200            1403.500000     443884.500000
+         10.0     8932664.0   2503.000000     6.495302e+05       16985.500000                190.150450            2284.500000     633618.500000
+         10.0     8932664.0  16678.000000     1.067855e+06       99170.000000               1110.195000            7645.000000     879454.000000
